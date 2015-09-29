@@ -1,0 +1,1 @@
+I manage a Next Generation Sequence Analysis Core Laboratory.  In this capacity, I train investigators to analyze NGS data using mostly open-source, command-line programs (Unix, Perl, R) on MacPro computers.
