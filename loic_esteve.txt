@@ -1,0 +1,3 @@
+Research Engineer in Parietal team at Inria. I am working on Python
+open-source packages that make machine learning easier to use
+for brain imaging applications.
