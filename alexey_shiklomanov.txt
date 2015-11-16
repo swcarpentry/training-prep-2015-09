@@ -1,0 +1,7 @@
+Alexey Shiklomanov
+Department of Earth & Environment, Boston University
+Ph.D. Geography candidate (second year)
+
+My research focuses on enhancing ecosystem models to improve our ability to predict the behavior of ecosystems
+under future climate regimes and human activity scenarios. In particular, I focus on developing novel methods
+for studying factors influencing vegetation abundance and health using airborne and satellite observations. 
