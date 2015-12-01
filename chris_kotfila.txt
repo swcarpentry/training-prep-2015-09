@@ -1,0 +1,3 @@
+My name is Chris Kotfila,  I am a PhD Student in Informatics
+My research interests are in machine learning, predictive analytics and knowledge organization
+I'm also a full time research and development software engineer!
