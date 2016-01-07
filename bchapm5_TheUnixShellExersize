@@ -1,0 +1,61 @@
+I apologies to two counts:
+It has taken me too long to produce this outline of an exercise and there is not enough detail.
+The reasons are it has been very busy, at work on Dec 25th, and I don't quite know what you want and that giving me a mental block
+If you had a model of the detail you are looking for I have experience teaching this stuff and can flesh out an outline like this quite quickly.
+
+
+
+################################
+the unix shell
+
+First steps
+Opening the shell
+closing the shell
+
+The what of the shell
+	issusing a command
+	getting a response
+
+the why of the shell
+	teleprint machines and the iternaction with computers
+	why the shell is still relevent // why are we learning this stuff // teaching goals
+		examples. mass file move
+
+The how of the shell
+	issue a command get an answer pwd
+	files and directores
+	*basic concept: the shell is currently pointed at a drectory in a file tree
+	*basic concept: In the time of big computers users had different homes
+		file tree - tree
+		where we are pwd
+		files here - ls
+		files somewhere else ls absolute path
+		files somewhere with a difficult absolute path
+		relative path .. and . 
+
+		first shortcut ~ home
+		moving cd
+			
+	making things
+		mkdir
+		rmdir
+		touch
+		rm
+		
+Sideline
+	tab completion
+
+	use an editor to create a file
+
+finding things 
+	find. command
+	grep command
+
+	
+	*Concept the Screen is another file
+	redirect STDIN
+	redirect STOUT
+	piping
+	running a series of commands
+	basic concept: the beginning of programming 
+	control structures if's and loops
