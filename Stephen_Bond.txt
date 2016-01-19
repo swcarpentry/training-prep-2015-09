@@ -1,0 +1,1 @@
+I'm a postdoc at the National Institutes of Health, studying the evolutionary development of gene families. I develop almost exclusively in Python these days, but also have some experience scripting for the web.
