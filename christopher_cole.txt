@@ -1,0 +1,1 @@
+I'm a fourth year undergraduate biostatistics student who has been working with R and Python for statistical genetics. I work specifically on developing and validating methodologies for multiple testing correction in whole genome like correlation patterns.
