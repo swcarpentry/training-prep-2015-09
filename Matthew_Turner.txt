@@ -1,0 +1,7 @@
+As a research software developer at the Northwest Knowledge Network at the University of Idaho,
+I develop full-stack web applications, REST and Python APIs, and server-side programming to support 
+data management and hydrological modeling. I have used IPython for almost a decade, 
+script and pipe commands in the shell when appropriate, and I follow software development best practices 
+(test-driven development, orthogonal designs) always. Like a carpenter I take great pride not only in the 
+outward, obvious functionality of the code I write, but also in the structure and presentation of
+the code itself.
