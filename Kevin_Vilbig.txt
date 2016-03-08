@@ -1,0 +1,1 @@
+I'm a hobbyist with a long history of polyglot programming for fun. I have volunteered with Free Geek in Portland and recently presented about writing my Social Science Bachelors Thesis in TeX at the UTALUG. I've worked professionally in Python, bash and with Makefiles.
