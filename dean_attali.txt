@@ -1,0 +1,1 @@
+I work on developing tools in R for analysing data from a specific biological assay calld Digital Droplet PCR. As part of that project I developed several R packages and Shiny apps that are used by many people.
