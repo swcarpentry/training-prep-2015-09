@@ -1,0 +1,255 @@
+---
+layout: page
+title: The Unix Shell
+subtitle: Shell features, history and tab completion
+minutes: 15
+---
+> ## Learning Objectives {.objectives}
+>
+> *   To provide mental model of the shell
+> *   To demonsrtate how the shell can be powerful and why it is worth learning
+> *   To show the shell features which ease it's use such as the prompt, shell history, and tab completion
+
+
+
+We have stated that the using a shell sometimes feels like programming and if you are not a programmer it can feel intimidating and cryptic. Part of this is because the shell was design for technological restricitons that are now passed and part of it is because a shell needs to be sparce to allow for all the different programs it might run. I will explain that last bit a little more shortly
+
+Command line interfaces don't provide a lot of context in the design. Many objects are designed to give cues as to how they are to be used. Doors often have a handle on one side to indicate you are to pull and a push plate on the other to tell you to push. Alternatively a knob on a door indicates that you need to twist and pull. The design tells you what you should do.
+
+Graphic user interface provides many cues in the form of buttons and drop down menues. Sometimes too many. If we displayed all the buttons and pull down menus of all the programs on the computer at once the result would cause more confustion than clarity
+
+Command line interface provices you with few cues but can do most of the same things with short terse command. If provides a minimal interface so it does not distract the user, but it was developed at a time when there were many less computer and 
+
+##Command Line Usefullness
+
+We will explane what we are dong in a moment but I would like to start with a why you should be interested in learning this stuff.
+
+Suppose you had 20 files and only wanted to look at 2 of them right now. 
+
+~~~ {.bash}
+$ touch file_wrong01.txt
+$ touch file_wrong02.txt
+$ touch file_wrong03.txt
+$ touch file_wrong04.txt
+$ touch file_wrong05.txt
+$ touch file_wrong06.txt
+$ touch file_wrong07.txt
+$ touch file_wrong08.txt
+$ touch file_wrong09.txt
+$ touch file_wrong10.txt
+$ touch file_wrong11.txt
+$ touch file_wrong12.txt
+$ touch file_wrong13.txt
+$ touch file_wrong14.txt
+$ touch file_wrong15.txt
+$ touch file_wrong16.txt
+$ touch file_wrong17.txt
+$ touch file_wrong18.txt
+$ touch file_wrong19.txt
+$ touch file_wrong20.txt
+$ touch file_right1.txt
+$ touch file_right2.txt
+$ mkdir wrong
+$ ls
+~~~
+
+~~~ {.output}
+file_right1.txt   file_wrong05.txt  file_wrong11.txt  file_wrong17.txt
+file_right2.txt   file_wrong06.txt  file_wrong12.txt  file_wrong18.txt
+file_wrong01.txt  file_wrong07.txt  file_wrong13.txt  file_wrong19.txt
+file_wrong02.txt  file_wrong08.txt  file_wrong14.txt  file_wrong20.txt
+file_wrong03.txt  file_wrong09.txt  file_wrong15.txt  wrong
+file_wrong04.txt  file_wrong10.txt  file_wrong16.txt
+~~~
+
+~~~ {.bash}
+$ mv file_wrong* wrong
+$ ls
+~~~
+
+~~~ {.output}
+file_right1.txt  file_right2.txt  wrong
+~~~
+
+Note to self: create zip data for this
+
+We have just moved all the files that we did not want to look at to another directory.
+
+20 file would be tedious to drag and drop but possible. now suppose it was 3 out of 100, or 1000, or 10000. The same line will move all those files. this is why the command line has power and this is why it is worth learning
+
+
+## Cues Provided By The Command Line
+
+I said the shell had few cues but it has some
+first is the prompt which tells you ready to accpet input
+
+~~~ {.bash}
+$ sleep 5
+~~~
+
+the prompt will disappear for 5 second and anything you type will not be sent to the computer
+
+~~~ {.bash}
+$ sleep 5
+
+~~~
+
+after that the computer is ready to take input again
+
+~~~ {.bash}
+$ sleep 5
+$
+~~~
+
+we can try to type something into the computer before type "sleep 5" and then "pwd" and press enter before the prompt comes back
+
+~~~ {.bash}
+$ sleep 5
+pwd
+~~~
+
+the computer will not act on the second command until it is done the first. My computer then give me the prompt and the command I have typed in and runs it ubt his 
+what I get looks like this but I odn't think garuntee
+
+~~~ {.bash}
+$ sleep 5
+pwd
+$ pwd
+/home/patrick
+~~~
+
+~~~ {.output}
+$ sleep 5
+pwd
+~~~
+
+prompt also ofet tells you your usersnal, your computer, and what directory you are in although we represent the the prompt with an "$" the one on my computer looks more like this.
+
+~~~ {.bash}
+patrick@patrick-desktop:~$
+~~~
+
+that tells me that I am user "patrick" on the comptuer "patrick-desktop" and I am in the "~" or my home directory if I change directories my prompt changes.
+
+~~~ {.bash}
+patrick@patrick-desktop:~$ cd /home
+patrick@patrick-desktop:/home$ cd ~
+~~~
+
+Now I am in the "/home" directory and my prompt tells me so. 
+I can go back to the "~" or home directory and my prompt will tell me
+
+~~~ {.bash}
+patrick@patrick-desktop:/home$ cd ~
+patrick@patrick-desktop:~$
+~~~
+
+## Helpful Shell Features
+
+the shell also had a few other tools to help you as we said in the introduction misspelling is a major time waste on a command line shell so there are tools
+
+command history. Most modern shell keep a record of the commands you have typed in and you can see it by pressing the up arrow on your keyboard. uses the up arrow more than once and you can see older commands. use the down arrow for previous command
+
+~~~ {.bash}
+$ ls
+~~~
+
+~~~ {.bash}
+$ ls -l
+~~~
+
+now if you hit the up arrow key you should see.
+
+~~~ {.bash}
+$ ls -l
+~~~
+
+hit the up arrow key again and you should see
+
+~~~ {.bash}
+$ ls
+~~~
+
+hit the down arrow key and you should see
+
+~~~ {.bash}
+$ ls -l
+~~~
+
+type " .." after at the command prompt "ls -l" and you should now have.
+
+~~~ {.bash}
+$ ls -l ..
+~~~
+
+so you can use the up and down arrow keys to look at, rerun, or edit commands you have previously run
+
+also most modern shell can help look up file with a press of the TAB key. this tab completeion will have you keystrokes and misspellings
+
+~~~ {.bash}
+$ ls /
+~~~
+
+and press the TAB key twice
+
+~~~ {.output}
+bin/            initrd.img.old  proc/           usr/
+boot/           lib/            root/           var/
+cdrom/          lib64/          run/            vmlinuz
+dev/            lost+found/     sbin/           vmlinuz.old
+etc/            media/          srv/            
+home/           mnt/            sys/            
+initrd.img      opt/            tmp/            
+~~~
+
+~~~ {.bash}
+$ ls /b
+~~~
+
+and press tab twice.
+
+~~~ {.output}
+bin/  boot/ 
+~~~
+
+now you only see the files and directores that begin with "b". now add an "o" after the "b" so your command prompt now looks like
+
+~~~ {.bash}
+$ ls /bo
+~~~
+
+and press tab Once.
+the command line changes to 
+
+~~~ {.bash}
+$ ls /boot/
+~~~
+
+the prompt was filled in for 
+
+these are all the files and directories in the "/" directory
+
+you should also still have "ls /" at the prompt type a "b" so the prompt is now
+
+> ## Unix case sesnstivity {.callout}
+> In most windows operating systems filenames are not case sensative. If you created a file called "file.txt" and then create a file called "File.txt" the Windows OS will tell you file already exists. This is not the case for most Unix operating systems and a quick demonstration will show it
+
+Now I realize I have covered tooks your shell provides before I have covered how to use the shell. but being aware of these tools can save you keystrokes and missspellings. which can be frustrating
+
+
+~~~ {.bash}
+$ cd 
+$ touch case
+$ touch casE
+$ ls ca
+~~~
+
+and press the tab key twice
+
+~~~ {.output}
+case  casE 
+~~~
+
+So you can see that "case" and "casE" are two separate files
+
+
